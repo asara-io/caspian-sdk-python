@@ -28,7 +28,9 @@ classifiers = [
   "Programming Language :: Python :: 3.13",
   "Typing :: Typed",
 ]
-dependencies = []
+dependencies = [
+  "httpx>=0.27,<1",
+]
 
 [project.optional-dependencies]
 dev = [
@@ -59,3 +61,4 @@ packages = ["asara.caspian"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+pythonpath = ["src"]

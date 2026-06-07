@@ -9,8 +9,8 @@ This repository contains the Python distribution that will be published as
 
 ## Status
 
-This SDK is in early package setup. The public package shape is being prepared
-before endpoint clients are implemented.
+This SDK is in early development. The synchronous client currently supports the
+authenticated public health endpoint.
 
 ## Installation
 
@@ -42,7 +42,7 @@ control.
 ## Example
 
 The completed SDK is expected to expose typed sync and async clients for the
-external Caspian API:
+external Caspian API. The synchronous health check is available now:
 
 ```python
 import os
@@ -55,13 +55,12 @@ with CaspianClient(
     api_key=os.environ["CASPIAN_API_KEY"],
 ) as client:
     health = client.health()
-    samples = client.market_data.enriched_samples(ticker="AAPL", limit=100)
 
 print(health)
-print(samples)
 ```
 
-Async usage is expected to follow the same resource layout:
+Market data and policy resources will follow the same client layout as they are
+added. Async usage is expected to follow the same resource layout:
 
 ```python
 import os
