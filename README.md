@@ -104,13 +104,28 @@ Expected module areas:
 
 ## Development
 
-Common local checks:
+## Build and Test
+
+Create and activate a virtual environment using your platform's usual workflow,
+then install the SDK in editable mode with development dependencies:
 
 ```sh
 python -m pip install -e ".[dev]"
-python -m pytest
+```
+
+Run the test suite:
+
+```sh
 python -m ruff check src tests
 python -m mypy src
+python -m pytest
+```
+
+Build source and wheel distributions:
+
+```sh
+python -m pip install build
+python -m build
 ```
 
 ## License
